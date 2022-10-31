@@ -1,0 +1,102 @@
+:host {
+  .details {
+    background: var(--white);
+    max-width: 900px;
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    
+  }
+
+  .details-view {
+    margin-top: 50px;
+    border-color: black;
+    border-bottom: .1rem solid;
+    display: inline-block;
+    padding-bottom: 2rem;
+    position: absolute;
+    max-width: 800px;
+    align-items: center;
+    display: block;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      background: var(gray);
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+  }
+
+  .comments{
+    margin-top: 200px;
+    margin-right: 60px;
+    align-items: center;
+    display: block;
+
+  }
+  .comments-area {
+    margin-top: 20px;
+    margin-top: 5px;
+    border-top: 0.5px solid;
+    padding-top: 10px;
+  }
+
+  .comments-edit{
+    margin-top: 20px;
+    float: inline-end;
+
+  }
+
+  .button-edit{
+    float: right;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+    position: absolute;
+  }
+
+  .button-save{
+    float: right;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+  }
+
+  h3 {
+    color: black;
+    font-weight: bold;
+  }
+  h4 {
+    color: blue;
+    font-weight: bold;
+  }
+
+  input{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 25px;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+
+  label{
+    margin-top: 10px;
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 25px;
+  }
+}

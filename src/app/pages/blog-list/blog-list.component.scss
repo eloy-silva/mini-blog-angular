@@ -1,0 +1,79 @@
+@use "../../../config-scss/variables.scss";
+@use "../../../config-scss/reset.scss";
+
+:host {
+  .blog {
+    border: 0.1rem solid;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    max-width: 100%;
+
+    &__list-card {
+      margin-top: 10px;
+      margin-bottom: 40px;
+
+      h2 {
+        border-bottom: 0.1rem solid;
+        font-size: 1.8rem;
+        overflow: hidden;
+        padding: 1rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      p {
+        height: 5rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+
+    &__more {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: none;
+      padding: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .3s;
+      border-radius: 5px;
+    }
+  }
+
+  .button-create {
+    margin-top: 40px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+  }
+
+  .pagination {
+
+    &::ng-deep.ngx-pagination {
+      text-align: center;
+
+  
+      & *:hover {
+        border-radius: .3rem;
+      }
+  
+      & .current {
+        border-radius: .3rem;
+      }
+    }
+  }
+
+}

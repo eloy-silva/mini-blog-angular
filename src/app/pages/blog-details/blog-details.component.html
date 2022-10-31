@@ -1,0 +1,98 @@
+<div class="details">
+  <section *ngIf="!editPost">
+    <div class="details-view">
+      <h3 class="details-view__title">Titulo:{{ post.title }}</h3>
+      <p class="details-view__body">{{ post.body }}</p>
+    </div>
+    <button class="button-edit" (click)="editPost = true">Editar Post</button>
+  </section>
+
+  <div class="edit-post">
+    <section *ngIf="editPost">
+      <button
+        type="button"
+        class="mat-button mat-raised-button"
+        (click)="editPost = false"
+      >
+        Cancelar
+      </button>
+
+      <form
+        class="post-edit"
+        [formGroup]="postForm"
+        (ngSubmit)="editSubmit()"
+      >
+        <div class="post-edit__title">
+          <label class="post-edit__title-label">Titulo:
+          <input matInput type="text" id="post-title" formControlName="title" />
+        </label>
+
+        </div>
+
+        <div class="post__description">
+          <label class="post__description-label">Descricao:
+          <input matInput type="text" formControlName="body">
+        </label>
+        </div>
+        <button
+          class="button-save"
+          type="submit"
+          [disabled]="!postForm.valid"
+        >
+          Salvar Post
+        </button>
+      </form>
+    </section>
+  </div>
+
+<div class="comments">
+  <section  *ngIf="(comments$ | async)?.length && !editPost">
+    <h3>Comentarios</h3>
+    <div class="comments-area" *ngFor="let comment of comments$ | async">
+      <h3>Titulo:{{ comment.name }}</h3>
+      <h4>Email:{{ comment.email }}</h4>
+      <p>Comentario:{{ comment.body }}</p>
+    </div>
+  </section>
+  <div class="comments-edit">
+    <section class="comments-edit__action" *ngIf="!editPost">
+    
+        <form class="comments-edit__add" [formGroup]="form">
+          <h3>Comentar:</h3>
+           <div class="comments-edit__name">
+             <label class="comments-edit__name-label">Nome: 
+             <input type="text" class="comments-edit__input" id="name" formControlName="name">
+             <span class="error-mensage" *ngIf="form.get('name')?.errors">
+              O nome deve ter ao menos 3 caracteres 
+            </span>
+          </label>
+           </div>
+
+           <div class="comments-edit__email">
+            <label class="comments-edit__email-label">Email:
+              <input type="email" class="comments-edit__input" id="email" formControlName="email">
+              <span class="error-mensage" *ngIf="form.get('email')?.errors">
+                Informe o email  valido.
+              </span>
+            </label>
+        
+          </div>
+
+          <div class="comments-edit__body">
+            <label class="comments-edit__body-label">Comentario: 
+            <input type="text" class="comments-edit__input" formControlName="body">
+            <span class="error-mensage" *ngIf="form.get('body')?.errors">
+              Escreva seu comentario.
+            </span>
+          </label>
+          </div>
+           
+          <button class="button-save" type="reset" (click)="commentSubmit()" [disabled]="this.form.invalid" >
+            Salvar
+          </button>
+        </form>
+        
+    </section>
+  </div>
+</div>
+</div>

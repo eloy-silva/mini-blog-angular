@@ -1,0 +1,44 @@
+:host {
+  .post {
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    margin-top: 40px;
+    float: right;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+  }
+
+  label{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 8px;
+    width: 80%;
+    height: 25px;
+    color: #333;
+  }
+
+  input{
+    min-width: 300px;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    height: 25px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+}

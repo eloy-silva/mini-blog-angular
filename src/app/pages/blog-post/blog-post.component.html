@@ -1,0 +1,26 @@
+<div class="post">
+  <form class="post-form" [formGroup]="form">
+    <fieldset class="post-form__title">
+      <label class="post-form__title-label">Titulo do Post:</label>
+      <input type="text" id="title" formControlName="title" />
+      <span class="error-mensage" *ngIf="form.get('title')?.errors">
+        Informe o titulo.
+      </span>
+    </fieldset>
+    <fieldset class="post-form__body">
+      <label class="post-form__body-label">Descricao:</label>
+      <input type="text" id="body" formControlName="body" />
+      <span class="error-mensage" *ngIf="form.get('body')?.errors">
+        Escreva seu Post.
+      </span>
+    </fieldset>
+    <button
+      class="button"
+      type="reset"
+      (click)="submitPost()"
+      [disabled]="!form.valid"
+    >
+      Salvar Post
+    </button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="blog">
+  <button class="button-create" [routerLink]="'/edit'">Criar Post</button>
+  <div
+    class="blog__list-card"
+    *ngFor="
+      let post of (posts)!
+        | paginate: { itemsPerPage: 10, currentPage: page }
+    "
+  >
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+    <button class="blog__more" [routerLink]="['/details', post.id]">
+      More
+    </button>
+  </div>
+  
+
+  <pagination-controls
+    class="pagination"
+    (pageChange)="page = $event.toString()"
+  ></pagination-controls>
+</div>
